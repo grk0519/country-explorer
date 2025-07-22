@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌍Know Your Country</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}" defer></script>
+</head>
+<body>
+    <header class="main-header">
+        <div class="header-left">
+            <a href="/">🏠Home</a>
+        </div>
+        <h1 class="site-title">🌍Know Your Country</h1>
+    </header>
+
+    <div class="main-container">
+        <div class="search-box">
+            <form action="/country" method="POST">
+                <input type="text" name="country" placeholder="Enter code or name" required>
+                <button type="submit">Search</button>
+            </form>
+            <p class="helper-text"><em>Enter a country name or its code to explore or know about country</em></p>
+            {% if error %}
+                <p class="error-text">{{ error }}</p>
+            {% endif %}
+        </div>
+
+        {% if country %}
+        <div class="flex-wrap">
+            <div class="card visuals">
+                <h2>{{ country.name }}</h2>
+                <img src="{{ country.flag }}" alt="Flag of {{ country.name }}" class="flag">
+                {% if country.coatOfArms %}
+                    <h3>National Emblem</h3>
+                    <img src="{{ country.coatOfArms }}" alt="Coat of Arms of {{ country.name }}" class="emblem">
+                {% endif %}
+            </div>
+
+            <div class="card info">
+                <p><strong>Capital:</strong> {{ country.capital }}</p>
+                <p><strong>Region:</strong> {{ country.region }}</p>
+                <p><strong>Population:</strong> {{ country.population }}</p>
+                <p><strong>Currency:</strong> {{ country.currency }}</p>
+                <p><strong>Languages:</strong> {{ country.languages }}</p>
+            </div>
+
+            {% if country.latlng %}
+            <div class="card map">
+                <h3>Map</h3>
+                <div id="map"
+                    data-lat="{{ country.latlng[0] }}"
+                    data-lng="{{ country.latlng[1] }}"
+                     data-name="{{ country.name }}">
+                </div>
+            </div>
+            {% endif %}
+        </div>
+        {% endif %}
+    </div>
+</body>
+<footer class="app-footer">
+  <div class="social-links">
+    <a href="https://www.linkedin.com/in/your-profile" target="_blank" aria-label="LinkedIn">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn icon" class="footer-icon">
+    </a>
+    <a href="https://github.com/your-username/your-repo" target="_blank" aria-label="GitHub">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub icon" class="footer-icon">
+    </a>
+  </div>
+  <p>© 2025 Know Your Country — All rights reserved.</p>
+</footer>
+</html>

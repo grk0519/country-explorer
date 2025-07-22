@@ -1,0 +1,298 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #a7aaae;
+}
+
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: #695004dd;
+    color: white;
+}
+
+.site-title {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    flex-grow: 1;
+    font-weight: bold;
+    font-style: italic;
+    
+}
+
+
+.header-left a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.main-container {
+    max-width: 1000px;
+    margin: auto;
+    padding: 20px;
+}
+
+.search-box {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+
+input[type="text"] {
+    padding: 10px;
+    width: 60%;
+    max-width: 400px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+button {
+    padding: 10px 20px;
+    background: #0078d4;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.helper-text {
+    margin-top: 10px;
+    font-style: italic;
+    color: #555;
+}
+
+.error-text {
+    color: red;
+    margin-top: 10px;
+}
+
+.flex-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    flex: 1;
+    min-width: 250px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.visuals img {
+    max-width: 100px;
+    display: block;
+    margin: 10px auto;
+}
+
+@media screen and (max-width: 768px) {
+    input[type="text"] {
+        width: 80%;
+    }
+
+    .site-title {
+        text-align: center;
+        font-size: 20px;
+    }
+
+    .flex-wrap {
+        flex-direction: column;
+    }
+}
+
+#map {
+    height: 300px;
+    width: 100%;
+    margin-top: 10px;
+    border-radius: 6px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.flex-layout {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.sidebar {
+  flex: 1;
+  max-width: 300px;
+}
+
+.content {
+  flex: 2;
+}
+
+#country-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+#country-list li {
+  margin: 6px 0;
+}
+
+#country-list a {
+  text-decoration: none;
+  color: #0078d4;
+}
+
+#country-list a:hover {
+  text-decoration: underline;
+}
+
+.scroll-box {
+  max-height: 400px; /* Adjust as needed */
+  overflow-y: auto;
+  padding-right: 8px;
+}
+
+.continent-list {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 16px;
+}
+
+.continent-list li {
+  margin: 4px 0;
+}
+
+.continent-list a {
+  text-decoration: none;
+  color: #007BFF;
+}
+
+.continent-list a:hover {
+  text-decoration: underline;
+}
+
+#country-list-container {
+  border: 1px solid #ccc;
+  padding: 16px;
+  margin-top: 20px;
+  border-radius: 8px;
+  background-color: #fafafa;
+}
+
+#country-list-container h2 {
+  font-size: 1.2rem;
+  font-style: italic;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 16px;
+  color: #333;
+}
+.search-box {
+  border: 1px solid #ccc;
+  padding: 16px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  background-color: #fafafa;
+}
+
+.search-box form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px; /* Adds spacing between input and button */
+}
+
+.search-box input[type="text"] {
+  padding: 8px;
+  font-size: 1rem;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+}
+
+.search-box button {
+  padding: 8px;
+  font-size: 1rem;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.search-box button:hover {
+  background-color: #0056b3;
+}
+
+.search-box h2 {
+  font-size: 1.2rem;
+  font-style: italic;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.flag, .emblem {
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  background-color: #f8f9fb;
+  padding: 6px;
+  margin-top: 10px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+
+  /* Size adjustments */
+  width: 80%;     /* Increase from 100% or auto to 80% of container */
+  max-width: 400px; /* You can tune this for larger displays */
+  height: auto;
+}
+
+
+/* Optional: Set specific dimensions for better consistency */
+.flag {
+  max-height: 130px;
+  max-width: 400px; /* Adjust as needed */
+}
+
+.emblem {
+  max-height: 120px;
+}
+
+.footer-line {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 12px;
+  background-color: #f2f2f2;
+  font-size: 14px;
+  color: #555;
+  border-top: 1px solid #ddd;
+  height: 40px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.footer-line a {
+  display: inline-flex;
+}
+
+.footer-icon {
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+  transition: transform 0.2s ease;
+}
+
+.footer-icon:hover {
+  transform: scale(1.2);
+}
+
+
