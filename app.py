@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request
 import requests
 import json
+import os
 
 app = Flask(__name__)
 
@@ -79,4 +80,5 @@ def country_by_code(code):
     return render_template('index.html', country=country_info, country_data=country_data)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 8000))  # Azure uses PORT env variable
+    app.run(host='0.0.0.0', port=port, debug=True)
