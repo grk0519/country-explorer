@@ -64,5 +64,4 @@ jobs:
         id: deploy-to-webapp
         with:
           app-name: 'KnowYourCountry'
-          slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_EAB174909D754836A17E4D67325F64BC }}
